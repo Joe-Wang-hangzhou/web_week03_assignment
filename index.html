@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div class="logo-area">
+          <i class="fas fa-hamburger logo-icon"></i>
+          <h1>Meal Explorer</h1>
+        </div>
+
+        <form id="search-form" class="search-container" autocomplete="off">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Type a meal name to discover..."
+            aria-label="Search meals"
+          />
+          <button id="search-btn" type="submit" aria-label="Search">
+            <i class="fas fa-search"></i>
+            Find
+          </button>
+        </form>
+      </header>
+
+      <main class="content-area">
+        <div id="status-message" class="status-box hidden" aria-live="polite"></div>
+        <section id="recipe-grid" class="recipe-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="recipe-modal" class="recipe-modal hidden" aria-hidden="true">
+      <div class="modal-bg" data-close="true"></div>
+      <div class="modal-box">
+        <button id="close-modal" class="btn-close" type="button" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <button id="btn-back" class="btn-back" type="button">
+          <i class="fas fa-chevron-left"></i>
+          Return
+        </button>
+
+        <div class="modal-inner">
+          <img id="recipe-img" src="" alt="Recipe image" />
+
+          <div class="recipe-info-body">
+            <span id="recipe-category" class="category-badge"></span>
+            <h2 id="recipe-title"></h2>
+
+            <div class="info-block">
+              <h3>How to cook</h3>
+              <p id="recipe-instructions"></p>
+            </div>
+
+            <div class="info-block">
+              <h3>What you need</h3>
+              <ul id="ingredient-list" class="ingredient-list"></ul>
+            </div>
+
+            <a id="youtube-link" class="youtube-btn" href="#" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube"></i>
+              Video Tutorial
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
